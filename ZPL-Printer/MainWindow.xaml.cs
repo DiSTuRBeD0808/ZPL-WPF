@@ -20,7 +20,6 @@ namespace ZPL_Printer
   /// </summary>
   public partial class MainWindow : Window
   {
-
     private void IsSerialized_Checked(object sender, RoutedEventArgs e)
     {
       if (isSerialized.IsChecked == true)
@@ -55,11 +54,18 @@ namespace ZPL_Printer
 
     }
 
+    private void Qty_TextChanged(object sender, TextChangedEventArgs e)
+    {
+
+    }
+
     public void Print_Click(object sender, RoutedEventArgs e)
     {
       string matDoc = matDocField.Text;
       string lineItem = lineItemField.Text;
       string matNo = matNoField.Text;
+      string matDesc = matDescField.Text;
+      string qty = quantityField.Text;
       
 
       string barcode = matDoc + "-" + lineItem + "-" + matNo + "*[SN:" + serialNoField.Text + "]";
@@ -77,7 +83,7 @@ namespace ZPL_Printer
         }
         // Printer IP Address and communication port
 
-        string ipAddress = "127.0.0.1";
+        string ipAddress = ipAddressField.Text;
 
         int port = 9100;
 
@@ -85,15 +91,7 @@ namespace ZPL_Printer
 
         string ZPLString =
 
-            "^XA" +
-
-            "^FO50,50" +
-
-            "^A0N50,50" +
-
-            "^FDHello, World!^FS" +
-
-            "^XZ";
+        ("^XA^FS^FT10,70^XGE:LOGO.GRF,1,1^FS" + "^FT320,70^A0N,75,75^FH\\^FN1^FD" +/*Material Number*/ matNo + "^FS^FT25,130^A0N,55,55^FH\\^FN2^FD" + /* Material Description*/matDesc + "^FS^MMT^LH0,0^CI0^BY110,110^FT26,300^BXN,5,200,24,24,1^FH\\^FN3^FD" + /*barcode*/ barcode + "^FS^FT214,230^A0N,43,44^FH\\^FDDoc:^FS" + "^FT320,230^A0N,43,44^FH\\^FN5^FD" + /*Material Document*/ matDoc+ '-' + lineItem + "^FS^FT196,280^A0N,43,44^FH\\^FDS.Nr:^FS^FT320,280^A0N,43,44^FH\\^FN7^FD" + /*Serial Number*/ serialNoField.Text + "^FS^FT200,330^A0N,43,44^FH\\^FDQty:^FS^FT320,330^A0N,43,44^FH\\^FN11^FD" + /*Quantity*/ qty + "^FS^FO320,580^GB120,120,4^FS^XZ");
 
         try
 
@@ -129,6 +127,87 @@ namespace ZPL_Printer
 
           // Catch Exception
 
+        }
+      }
+    }
+/*
+    public void ipAddressField_TextChanged(object sender, TextChangedEventArgs e)
+    {
+      string ipAddress = ipAddressField.Text;
+      NSipAddressField.Text = ipAddress;
+      string nsIpAddress = NSipAddressField.Text;
+      ipAddressField.Text = nsIpAddress;
+    }
+*/
+    public void NSPrint_Click(object sender, RoutedEventArgs e)
+    {
+      {
+        string NSmatDoc = NSmatDocField.Text;
+        string NSlineItem = NSlineItemField.Text;
+        string NSmatNo = NSmatNoField.Text;
+        string NSmatDesc = NSmatDescField.Text;
+        string NSqty = NSquantityField.Text;
+
+
+        string NSbarcode = "NS" + NSmatDoc + "-" + NSlineItem + "-" + NSmatNo + "*[SN:" + NSserialNoField.Text + "]";
+
+        MessageBoxResult NSlabelResult = MessageBox.Show(NSbarcode);
+
+        print_zpl(NSbarcode);
+
+
+        void print_zpl(string label)
+        {
+          if (string.IsNullOrEmpty(label))
+          {
+            throw new ArgumentException("Please enter valid barcode data.", nameof(label));
+          }
+          // Printer IP Address and communication port
+
+          string ipAddress = ipAddressField.Text;
+
+          int port = 9100;
+
+          // ZPL Command(s)
+
+          string NSZPLString =
+
+          ("^XA^FS^FT220,70^A0N,70,70^FH\\^FN1^FD" + NSmatNo + "^FS^FT26,110^A0N,43,44^FH\\^FD" + NSmatDesc + "^FS^MMT^LH0,0^CI0^BY110,110^FT26,237^BXN,5,200,22,22,1^FH\\^FN5^FD" + NSbarcode + "^FS^FT274,150^A0N,43,44^FH\\^FDNonStock^FS^FT500,150^A0N,43,44^FH\\^FN3^FDQuantity: " + NSqty + "^FS^FT258,200^A0N,43,44^FH\\^FDDoc:^FS^FT350,200^A0N,43,44^FH\\^FN8^FDNS" + NSmatDoc + NSlineItem + "^FS^FT256,250^A0N,43,44^FH\\^FDS.Nr:^FS^FT350,250^A0N,43,44^FH\\^FN2^FD" + NSserialNoField.Text + "^FS");
+          try
+
+          {
+
+            // Open connection
+
+            System.Net.Sockets.TcpClient client = new System.Net.Sockets.TcpClient();
+
+            client.Connect(ipAddress, port);
+
+            // Write ZPL String to connection
+
+            System.IO.StreamWriter writer =
+
+        new System.IO.StreamWriter(client.GetStream());
+
+            writer.Write(NSZPLString);
+
+            writer.Flush();
+
+            // Close Connection
+
+            writer.Close();
+
+            client.Close();
+
+          }
+
+          catch (Exception ex)
+
+          {
+
+            // Catch Exception
+
+          }
         }
       }
     }
