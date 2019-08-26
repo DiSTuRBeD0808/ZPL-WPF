@@ -1,0 +1,15 @@
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\bin\Debug\ZPL-Printer.exe.config
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\bin\Debug\ZPL-Printer.exe
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\bin\Debug\ZPL-Printer.pdb
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\obj\Debug\ZPL-Printer.csprojAssemblyReference.cache
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\obj\Debug\MainWindow.g.cs
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\obj\Debug\App.g.cs
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\obj\Debug\ZPL-Printer_MarkupCompile.cache
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\obj\Debug\ZPL-Printer_MarkupCompile.lref
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\obj\Debug\MainWindow.baml
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\obj\Debug\ZPL-Printer.g.resources
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\obj\Debug\ZPL_Printer.Properties.Resources.resources
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\obj\Debug\ZPL-Printer.csproj.GenerateResource.cache
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\obj\Debug\ZPL-Printer.csproj.CoreCompileInputs.cache
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\obj\Debug\ZPL-Printer.exe
+D:\Projects\ZPL-WPF\ZPL-WPF\ZPL-Printer\obj\Debug\ZPL-Printer.pdb
