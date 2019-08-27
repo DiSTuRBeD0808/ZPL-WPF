@@ -6,55 +6,73 @@
         xmlns:local="clr-namespace:ZPL_Printer"
         mc:Ignorable="d"
         Title="ZPL Printer" Height="396.983" Width="382.707">
-    <TabControl Margin="0,0,2,6">
+    <TabControl Margin="1,1,1,1">
         <TabItem Header="Stock GR">
-            <Grid Background="#FFE5E5E5" Margin="0,0,0,1">
+            <Grid Background="#FFE5E5E5" Margin="1,1,1,1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="33*"/>
-                    <ColumnDefinition Width="152*"/>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="146*"/>
+                    <ColumnDefinition Width="212*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="matDocField" Height="21" Margin="84,50,34,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="MatDoc_TextChanged"/>
-                <TextBox x:Name="lineItemField" Height="21" Margin="84,90,34,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="LineItem_TextChanged"/>
-                <TextBox x:Name="matNoField" Height="21" Margin="84,130,34,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="MatNo_TextChanged"/>
-                <TextBox x:Name="matDescField" Height="21" Margin="84,170,34,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="SerialNumber_TextChanged"/>
-                <Label x:Name="matDocLabel" Content="Material Document" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,45,0,0" Grid.ColumnSpan="2" Width="126" Grid.Column="1" Height="26"/>
-                <Label x:Name="lineItemLabel" Content="Line Item" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,85,0,0" Grid.ColumnSpan="2" Width="126" Grid.Column="1" Height="26"/>
-                <Label x:Name="matNoLabel" Content="Material Number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,125,0,0" Grid.ColumnSpan="2" Width="126" Grid.Column="1" Height="26"/>
-                <Label x:Name="matDescLabel" Content="Material Description" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,165,0,0" Grid.ColumnSpan="2" Width="126" Grid.Column="1" Height="26"/>
-                <CheckBox x:Name="isSerialized" Content="Serialized?" Grid.Column="2" Margin="153,259,34,44" Click="IsSerialized_Checked"/>
-                <Button x:Name="Print" Content="Print" HorizontalAlignment="Left" Margin="14,289,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="Print_Click" Grid.Column="1" Height="20"/>
-                <Label x:Name="serialNoLabel" Content="Serial Number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,205,0,0" Grid.ColumnSpan="2" Width="126" Grid.Column="1" Height="26"/>
-                <TextBox x:Name="serialNoField" Height="21" Margin="84,210,34,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="SerialNumber_TextChanged" IsEnabled="False"/>
-                <TextBox x:Name="quantityField" HorizontalAlignment="Left" Height="23" Margin="54,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextChanged="Qty_TextChanged" Grid.ColumnSpan="2" Grid.Column="1"/>
-                <Label x:Name="serialNoLabel_Copy" Content="Qty:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,248,0,0" Width="54" Grid.Column="1" Height="26"/>
-                <TextBox x:Name="ipAddressField" Grid.Column="2" Height="23" Margin="84,13,116,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" TextChanged="ipAddressField_TextChanged"/>
-                <Label x:Name="ipAddressLabel" Content="IP Address:" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="157" FontWeight="Bold" Grid.Column="1" Height="26"/>
+                <TextBox x:Name="matDocField" Height="21" Margin="2,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="MatDoc_TextChanged" HorizontalAlignment="Left" Width="176"/>
+                <TextBox x:Name="lineItemField" Height="21" Margin="2,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="LineItem_TextChanged" HorizontalAlignment="Left" Width="176"/>
+                <TextBox x:Name="matNoField" Height="21" Margin="2,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="MatNo_TextChanged" HorizontalAlignment="Left" Width="176"/>
+                <TextBox x:Name="matDescField" Height="21" Margin="2,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="SerialNumber_TextChanged" HorizontalAlignment="Left" Width="176"/>
+                <Label x:Name="matDocLabel" Content="Material Document" VerticalAlignment="Top" Margin="0,45,17,0" Grid.Column="1" Height="26" HorizontalAlignment="Right" Width="126"/>
+                <Label x:Name="lineItemLabel" Content="Line Item" VerticalAlignment="Top" Margin="0,85,17,0" Grid.Column="1" Height="26" HorizontalAlignment="Right" Width="126"/>
+                <Label x:Name="matNoLabel" Content="Material Number" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,125,17,0" Width="126" Grid.Column="1" Height="26"/>
+                <Label x:Name="matDescLabel" Content="Material Description" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,165,17,0" Width="126" Grid.Column="1" Height="26"/>
+                <CheckBox x:Name="isSerialized" Content="Serialized?" Grid.Column="2" Margin="71,259,0,44" Click="IsSerialized_Checked" HorizontalAlignment="Left" Width="107"/>
+                <Button x:Name="Print" Content="Print" HorizontalAlignment="Right" Margin="0,289,17,10" Width="115" Click="Print_Click" Grid.Column="1"/>
+                <Label x:Name="serialNoLabel" Content="Serial Number" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,205,17,0" Width="126" Grid.Column="1" Height="26"/>
+                <TextBox x:Name="serialNoField" Height="21" Margin="2,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="SerialNumber_TextChanged" IsEnabled="False" HorizontalAlignment="Left" Width="176"/>
+                <TextBox x:Name="quantityField" Height="23" Margin="0,251,15,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="Qty_TextChanged" Grid.Column="1" HorizontalAlignment="Right" Width="75"/>
+                <Label x:Name="serialNoLabel_Copy" Content="Qty:" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,248,91,0" Width="54" Grid.Column="1" Height="26"/>
+                <TextBox x:Name="ipAddressField" Grid.Column="2" Height="23" Margin="2,13,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="94"/>
+                <Label x:Name="ipAddressLabel" Content="IP Address:" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="136" FontWeight="Bold" Grid.Column="1" Height="26"/>
             </Grid>
         </TabItem>
         <TabItem Header="NonStock">
-            <Grid Background="#FFE5E5E5" Margin="0,0,0,1">
+            <Grid Background="#FFE5E5E5" Margin="1,1,1,1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="33*"/>
-                    <ColumnDefinition Width="152*"/>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="207*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="NSmatDocField" Height="21" Margin="84,50,34,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="MatDoc_TextChanged"/>
-                <TextBox x:Name="NSlineItemField" Height="21" Margin="84,90,34,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="LineItem_TextChanged"/>
-                <TextBox x:Name="NSmatNoField" Height="21" Margin="84,130,34,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="MatNo_TextChanged"/>
-                <TextBox x:Name="NSmatDescField" Height="21" Margin="84,170,34,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="SerialNumber_TextChanged"/>
-                <Label x:Name="NSmatDocLabel" Content="Material Document" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,45,0,0" Grid.ColumnSpan="2" Width="126" Grid.Column="1" Height="26"/>
-                <Label x:Name="NSlineItemLabel" Content="Line Item" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,85,0,0" Grid.ColumnSpan="2" Width="126" Grid.Column="1" Height="26"/>
-                <Label x:Name="NSmatNoLabel" Content="Material Number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,125,0,0" Grid.ColumnSpan="2" Width="126" Grid.Column="1" Height="26"/>
-                <Label x:Name="NSmatDescLabel" Content="Material Description" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,165,0,0" Grid.ColumnSpan="2" Width="126" Grid.Column="1" Height="26"/>
-                <CheckBox x:Name="NSisSerialized" Content="Serialized?" Grid.Column="2" Margin="153,259,34,44" Click="IsSerialized_Checked"/>
-                <Button x:Name="NSPrint" Content="Print" HorizontalAlignment="Left" Margin="14,289,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="NSPrint_Click" Grid.Column="1" Height="20"/>
-                <Label x:Name="NSserialNoLabel" Content="Serial Number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3,205,0,0" Grid.ColumnSpan="2" Width="126" Grid.Column="1" Height="26"/>
-                <TextBox x:Name="NSserialNoField" Height="21" Margin="84,210,34,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="SerialNumber_TextChanged" IsEnabled="False"/>
-                <TextBox x:Name="NSquantityField" HorizontalAlignment="Left" Height="23" Margin="54,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextChanged="Qty_TextChanged" Grid.ColumnSpan="2" Grid.Column="1"/>
-                <Label x:Name="NSserialNoLabel_Copy" Content="Qty:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,248,0,0" Width="54" Grid.Column="1" Height="26"/>
-                <TextBox x:Name="NSipAddressField" Grid.Column="2" Height="23" Margin="84,13,116,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="ipAddressField_TextChanged" Text="127.0.0.1"/>
-                <Label x:Name="NSipAddressLabel" Content="IP Address:" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="157" FontWeight="Bold" Grid.Column="1" Height="26"/>
+                <TextBox x:Name="NSmatDocField" Height="21" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="MatDoc_TextChanged" HorizontalAlignment="Left" Width="179"/>
+                <TextBox x:Name="NSlineItemField" Height="21" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="LineItem_TextChanged" HorizontalAlignment="Left" Width="179"/>
+                <TextBox x:Name="NSmatNoField" Height="21" Margin="10,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="MatNo_TextChanged" HorizontalAlignment="Left" Width="179"/>
+                <TextBox x:Name="NSmatDescField" Height="21" Margin="10,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="SerialNumber_TextChanged" HorizontalAlignment="Left" Width="179"/>
+                <Label x:Name="NSmatDocLabel" Content="Material Document" VerticalAlignment="Top" Margin="0,45,21,0" Grid.Column="1" Height="26" HorizontalAlignment="Right" Width="126"/>
+                <Label x:Name="NSlineItemLabel" Content="Line Item" VerticalAlignment="Top" Margin="0,85,21,0" Grid.Column="1" Height="26" HorizontalAlignment="Right" Width="126"/>
+                <Label x:Name="NSmatNoLabel" Content="Material Number" VerticalAlignment="Top" Margin="0,125,21,0" Grid.Column="1" Height="26" HorizontalAlignment="Right" Width="126"/>
+                <Label x:Name="NSmatDescLabel" Content="Material Description" VerticalAlignment="Top" Margin="0,165,21,0" Grid.Column="1" Height="26" HorizontalAlignment="Right" Width="126"/>
+                <CheckBox x:Name="NSisSerialized" Content="Serialized?" Grid.Column="2" Margin="63,259,0,44" Click="NSIsSerialized_Checked" HorizontalAlignment="Left" Width="110"/>
+                <Button x:Name="NSPrint" Content="Print" Margin="0,289,61,0" VerticalAlignment="Top" Click="NSPrint_Click" Grid.Column="1" Height="20" HorizontalAlignment="Right" Width="75"/>
+                <Label x:Name="NSserialNoLabel" Content="Serial Number" VerticalAlignment="Top" Margin="0,205,21,0" Grid.Column="1" Height="26" HorizontalAlignment="Right" Width="126"/>
+                <TextBox x:Name="NSserialNoField" Height="21" Margin="10,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="SerialNumber_TextChanged" IsEnabled="False" HorizontalAlignment="Left" Width="179"/>
+                <TextBox x:Name="NSquantityField" Height="23" Margin="0,251,21,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="Qty_TextChanged" Grid.Column="1" HorizontalAlignment="Right" Width="75"/>
+                <Label x:Name="NSserialNoLabel_Copy" Content="Qty:" VerticalAlignment="Top" Margin="0,248,96,0" Grid.Column="1" Height="26" HorizontalAlignment="Right" Width="54"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Pick(Res)">
+            <Grid Background="#FFE5E5E5" Margin="1,1,1,1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="172*"/>
+                    <ColumnDefinition Width="185*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="PresNoLabel" Content="Reservation Number:" Grid.Column="1" HorizontalAlignment="Right" Margin="0,30,25,0" VerticalAlignment="Top" Width="137"/>
+                <Label x:Name="PlineItemLabel" Content="Line Item:" Grid.Column="1" Margin="0,61,25,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="137"/>
+                <Label x:Name="PmatNoLabel" Content="Material Number:" Grid.Column="1" Margin="0,92,25,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="137"/>
+                <Label x:Name="PmatDescLabel" Content="Material Description:" Grid.Column="1" Margin="0,123,25,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="137"/>
+                <TextBox x:Name="PreservationField" Grid.Column="2" Height="23" Margin="10,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="165" TextChanged="PresNoField_TextChanged"/>
+                <TextBox x:Name="PlineItemField" Grid.Column="2" Height="23" Margin="10,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="165" TextChanged="PlineItemField_TextChanged"/>
+                <TextBox x:Name="PmatNoField" Grid.Column="2" Height="23" Margin="10,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="165" TextChanged="PmatNoField_TextChanged"/>
+                <TextBox x:Name="PmatDescField" Grid.Column="2" Height="23" Margin="10,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="165" TextChanged="PmatDescField_TextChanged"/>
+                <TextBox x:Name="PquantityField" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" TextChanged="PqtyField_TextChanged"/>
+                <Label x:Name="PquantityLabel" Content="Quantity:" Grid.Column="1" HorizontalAlignment="Right" Margin="0,154,87,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="Pprint" Content="Print" Grid.Column="1" Margin="10,201,0,93" HorizontalAlignment="Left" Width="100" Click="Pprint_Click"/>
             </Grid>
         </TabItem>
     </TabControl>
