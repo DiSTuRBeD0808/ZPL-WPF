@@ -53,9 +53,27 @@ namespace ZPL_Printer
 
     }
 
-    public void LineItem_TextChanged(object sender, TextChangedEventArgs e)
+    private void NSlineItemField_LostFocus(object sender, RoutedEventArgs e)
     {
+      string NSlineItemText = NSlineItemField.Text;
 
+      string NSpaddedLineItemText = NSlineItemText.PadLeft(4, '0');
+
+      this.NSlineItemField.Text = NSpaddedLineItemText;
+    }
+    
+    public void lineItemField_LostFocus(object sender, RoutedEventArgs e)
+    {
+      while(lineItemField.Text.Length != 4)
+      {
+        string lineItemText = lineItemField.Text;
+
+        string paddedLineItemText = lineItemText.PadLeft(4, '0');
+
+        this.lineItemField.Text = paddedLineItemText;
+
+
+      }
     }
 
     private void MatNo_TextChanged(object sender, TextChangedEventArgs e)

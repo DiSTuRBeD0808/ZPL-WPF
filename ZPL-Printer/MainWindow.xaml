@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ZPL Printer" Height="396.983" Width="382.707">
     <TabControl Margin="1,1,1,1">
-        <TabItem Header="Stock GR">
+        <TabItem Header="Stock GR" LostFocus="lineItemField_LostFocus">
             <Grid Background="#FFE5E5E5" Margin="1,1,1,1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="7*"/>
@@ -15,7 +15,7 @@
                     <ColumnDefinition Width="212*"/>
                 </Grid.ColumnDefinitions>
                 <TextBox x:Name="matDocField" Height="21" Margin="2,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="MatDoc_TextChanged" HorizontalAlignment="Left" Width="176"/>
-                <TextBox x:Name="lineItemField" Height="21" Margin="2,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="LineItem_TextChanged" HorizontalAlignment="Left" Width="176"/>
+                <TextBox x:Name="lineItemField" Height="21" Margin="2,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" HorizontalAlignment="Left" Width="176" LostFocus="lineItemField_LostFocus"/>
                 <TextBox x:Name="matNoField" Height="21" Margin="2,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="MatNo_TextChanged" HorizontalAlignment="Left" Width="176"/>
                 <TextBox x:Name="matDescField" Height="21" Margin="2,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="SerialNumber_TextChanged" HorizontalAlignment="Left" Width="176"/>
                 <Label x:Name="matDocLabel" Content="Material Document" VerticalAlignment="Top" Margin="0,45,17,0" Grid.Column="1" Height="26" HorizontalAlignment="Right" Width="126"/>
@@ -40,7 +40,7 @@
                     <ColumnDefinition Width="207*"/>
                 </Grid.ColumnDefinitions>
                 <TextBox x:Name="NSmatDocField" Height="21" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="MatDoc_TextChanged" HorizontalAlignment="Left" Width="179"/>
-                <TextBox x:Name="NSlineItemField" Height="21" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="LineItem_TextChanged" HorizontalAlignment="Left" Width="179"/>
+                <TextBox x:Name="NSlineItemField" Height="21" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" HorizontalAlignment="Left" Width="179" LostFocus="NSlineItemField_LostFocus"/>
                 <TextBox x:Name="NSmatNoField" Height="21" Margin="10,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="MatNo_TextChanged" HorizontalAlignment="Left" Width="179"/>
                 <TextBox x:Name="NSmatDescField" Height="21" Margin="10,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" TextChanged="SerialNumber_TextChanged" HorizontalAlignment="Left" Width="179"/>
                 <Label x:Name="NSmatDocLabel" Content="Material Document" VerticalAlignment="Top" Margin="0,45,21,0" Grid.Column="1" Height="26" HorizontalAlignment="Right" Width="126"/>
